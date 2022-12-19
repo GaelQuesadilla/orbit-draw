@@ -9,11 +9,13 @@ export const useCanvas = (width, height) => {
     canvas.height = height;
     canvas.width = width;
 
-    const context = canvas.getContext("2d");
-    context.linecap = "round";
-    contextRef.current = context;
+    const ctx = canvas.getContext("2d");
+    ctx.linecap = "round";
+    contextRef.current = ctx;
+    ctx.fillStyle = "#002";
+    ctx.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
 
     return () => {};
-  }, []);
+  }, [width, height]);
   return [canvasRef, contextRef];
 };

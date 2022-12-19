@@ -5,5 +5,10 @@ export const UseStateUp = (initialValue) => {
   const onChange = (newValue) => {
     setValue(newValue);
   };
-  return [value, setValue, onChange];
+
+  const setValueUp = (f) => {
+    setValue((prev) => f(prev));
+  };
+
+  return [value, setValueUp, onChange];
 };
