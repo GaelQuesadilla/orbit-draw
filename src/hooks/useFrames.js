@@ -4,9 +4,7 @@ export const useFrames = (play, frameRate) => {
   const [frame, setFrame] = useState(0);
   const intervalRef = useRef(null);
   useEffect(() => {
-    if (!play) {
-      clearInterval(intervalRef.current);
-    }
+    clearInterval(intervalRef.current);
     if (play) {
       intervalRef.current = setInterval(() => {
         setFrame((prev) => prev + 1);
@@ -14,6 +12,6 @@ export const useFrames = (play, frameRate) => {
     }
 
     return () => {};
-  }, [play]);
+  }, [play, frameRate]);
   return frame;
 };

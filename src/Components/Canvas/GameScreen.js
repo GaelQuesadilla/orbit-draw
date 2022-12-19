@@ -14,6 +14,8 @@ export const GameScreen = (props) => {
           width={props.width}
           height={props.height}
           gamestate={props.gamestate}
+          setGamestate={props.setGamestate}
+          frameRate={props.frameRate}
           steps={props.steps}
         />
       </div>
